@@ -14,7 +14,7 @@
 
 using namespace std;
 
-// ci si astenga dall'uso di std::swap
+// ci si astenga dall'uso di STL (ad es. std::swap)
 int main()
 {
     cout << "Inserisci i caratteri x e y: ";
