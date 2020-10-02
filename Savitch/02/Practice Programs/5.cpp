@@ -16,7 +16,7 @@ using namespace std;
 
 int main()
 {
-	// I worked on the formatting only 
+	// I worked exclusively on the formatting. I do not endorse anything else.
 	double radius, vm;
 	cout << "Enter radius of a sphere." << endl;
 	cin >> radius;
