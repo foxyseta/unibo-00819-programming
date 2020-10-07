@@ -33,7 +33,7 @@ int main()
         while (n) {
             // 1. Aggiorno r
             constexpr int due_posti{ 100 };
-            int gruppo_n{ n }, i = 1;
+            int gruppo_n{ n }, i{ 1 };
             while (gruppo_n >= due_posti) {
                 gruppo_n /= due_posti;
                 i *= due_posti;
