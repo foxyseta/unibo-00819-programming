@@ -22,8 +22,8 @@ int main()
     if (n < 2)
         cout << "Input non corretto.\n";
     else {
-        bool primo = true; // diverrà più semplice con return
-        for (int i = 2; i * i <= n && primo; ++i)
+        bool primo{ true }; // diverrà più semplice con return
+        for (int i{ 2 }; i * i <= n && primo; ++i)
             if (!(n % i))
                 primo = false;
         cout << (primo ? "Primo.\n" : "Non primo.\n");
