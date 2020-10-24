@@ -7,21 +7,21 @@
     20/10/2020
 
     17_3.cpp
-    "Dichiarazioni, funzioni e passaggio dei parametri", d. 17, es. 2
+    "Array", d. 17, es. 2
 */
 
 #include <iostream>
 
 using namespace std;
 
-bool is_in_array(int a[], const int size, int n);
+bool is_in_array(int a[], const size_t size, int n);
 
 int main()
 {
-    constexpr int dim{ 5 };
+    constexpr size_t dim{ 5 };
     cout << "Inserisci " << dim << " interi: ";
     int vet[dim];
-    for (int i{ 0 }; i < dim; ++i)
+    for (size_t i{ 0 }; i < dim; ++i)
         cin >> vet[i];
     cout << "Inserisci un carattere da cercare: ";
     int query;
@@ -29,9 +29,9 @@ int main()
     cout << (is_in_array(vet, dim, query) ? "Trovato.\n" : "Non trovato.\n");
 }
 
-bool is_in_array(int a[], const int size, int n)
+bool is_in_array(int a[], const size_t size, int n)
 {
-    for (int i{ 0 }; i < size; ++i)
+    for (size_t i{ 0 }; i < size; ++i)
         if (a[i] == n)
             return true;
     return false;
