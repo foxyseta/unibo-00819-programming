@@ -7,7 +7,7 @@
     28/10/2020
 
     10_1.cpp
-    "String", d. 10, es. 1
+    "Stringhe", d. 10, es. 1
 */
 
 #include <iostream>
