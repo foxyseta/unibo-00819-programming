@@ -1,0 +1,20 @@
+{
+	"Intestazione": {
+		"prefix": ["intestazione", "header"],
+		"body": [
+			"$BLOCK_COMMENT_START",
+			"\tUniversità di Bologna",
+			"\tCorso di laurea in Informatica",
+			"\t00819 - Programmazione",
+			"",
+			"\tStefano Volpe #969766",
+			"\t$CURRENT_DATE/$CURRENT_MONTH/$CURRENT_YEAR",
+			"",
+			"\t$TM_FILENAME",
+			"\t${1:(Testo dell'esercizio)}",
+			"$BLOCK_COMMENT_END",
+			""
+		],
+		"description": "Commento a blocco di inizio file."
+	}
+}
