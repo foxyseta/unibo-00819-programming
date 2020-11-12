@@ -44,8 +44,8 @@ Node* reverse(Node * const l)
 {
     Node *right{ l }, *left{ nullptr };
     while (right) {
-        Node * const new_right{ right -> next };
-        right -> next = left;
+        Node * const new_right{ right->next };
+        right->next = left;
         left = right;
         right = new_right;
     }
