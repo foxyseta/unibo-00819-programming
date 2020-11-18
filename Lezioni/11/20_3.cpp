@@ -59,7 +59,7 @@ void stampa_asterischi_prodotto(const int x, const int y)
 void stampa_asterischi_somma_prodotti(const int k, const int x, const int y)
 {
     if (k > 0) {
-        if (k > 0)
+        if (k > 1)
             stampa_asterischi_somma_prodotti(k - 1, x - 1, y - 1);
         if (x > 0) {
             if (x > 1)
