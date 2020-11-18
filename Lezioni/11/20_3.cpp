@@ -21,6 +21,8 @@ using namespace std;
     Assumo che n sia un numero naturale.
 */
 void stampa_asterischi_prodotto(const int x, const int y);
+// se n >= 0 stampa n^2 asterischi altrimenti stampa -n asterischi   
+void stampa_asterischi_quadrato_hacky(const int n);
 
 /*
     "Scrivere una funzione ricorsiva che prende n e stampa un numero di
@@ -35,10 +37,13 @@ int main()
     cout << "Inserisci n: ";
     int n;
     cin >> n;
+
     cout << "Stampo " << n << " al quadrato asterischi: ";
     stampa_asterischi_prodotto(n, n);
+    cout << "\nStampo " << n << " al quadrato asterischi (hacky): ";
+    stampa_asterischi_quadrato_hacky(n);
     cout << "\nStampo la somma dei quadrati dei primi " << n <<
-            " numeri naturali: ";
+            " numeri naturali (0 escluso): ";
     stampa_asterischi_somma_prodotti(n, n, n);
     cout << '\n';
 }
@@ -53,6 +58,18 @@ void stampa_asterischi_prodotto(const int x, const int y)
                 stampa_asterischi_prodotto(1, y - 1);
             cout << '*';
         }
+    }
+}
+
+void stampa_asterischi_quadrato_hacky(const int n)
+{
+    if (n > 0) {
+        if (n > 1)
+            stampa_asterischi_quadrato_hacky(n - 1);
+        stampa_asterischi_quadrato_hacky(1 - 2 * n);
+    } else if (n < 0) {
+        stampa_asterischi_quadrato_hacky(n + 1);
+        cout << '*';
     }
 }
 
