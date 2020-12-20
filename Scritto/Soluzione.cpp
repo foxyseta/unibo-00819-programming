@@ -19,49 +19,6 @@
 
 using namespace std;
 
-// es. 1
-void es1(int[], int da, int a);
-
-// es. 2
-struct regalo;
-regalo* es2a(regalo*, char n[], float p, char d[]);
-regalo* es2b(regalo*, char []);
-float es2c(regalo*, char []);
-
-// es. 3
-class Automobile;
-class Benzina;
-class Ibrida;
-class Elettrica;
-
-int main()
-{
-    // es. 1
-    constexpr int N{ 10 };
-    int arr[N] = { 6, -5, 5, 9, -1, 3, 2, 2, 3, 9};
-    es1(arr, 0, N - 1);
-    cout << "Es. 1:";
-    for (int i{ 0 }; i < N; ++i)
-        cout << ' ' << arr[i];
-    cout << '\n';
-
-    // es. 2
-    char nome[DIM] = "Peluche",
-         destinatario[DIM] = "Lucia";
-    regalo* r = es2a(NULL, nome, 17.80, destinatario);
-    strcpy(nome, "Vinile");
-    strcpy(destinatario, "Antonio");
-    r = es2a(r, nome, 30.0, destinatario);
-    strcpy(nome, "Pianta");
-    strcpy(destinatario, "Lucia");
-    r = es2a(r, nome, 10.0, destinatario);
-    strcpy(nome, "Cioccolatini");
-    strcpy(destinatario, "Lucia");
-    r = es2a(r, nome, 12.0, destinatario);
-    r = es2b(r, nome);
-    cout << "Es. 3: " << es2c(r, destinatario) << '\n';
-}
-
 void es1(int vet[], int da, int a)
 {
     if (a > da)
@@ -213,3 +170,37 @@ public:
         return batteria / consumo_per_100km * 100.0;
     }
 };
+
+int main()
+{
+    // es. 1
+    constexpr int N{ 10 };
+    int arr[N] = { 6, -5, 5, 9, -1, 3, 2, 2, 3, 9};
+    es1(arr, 0, N - 1);
+    cout << "Es. 1:";
+    for (int i{ 0 }; i < N; ++i)
+        cout << ' ' << arr[i];
+    cout << '\n';
+
+    // es. 2
+    constexpr int dim{ DIM };
+    char nome[dim] = "Peluche",
+         destinatario[dim] = "Lucia";
+    regalo* r = es2a(nullptr, nome, 17.80, destinatario);
+    strcpy(nome, "Vinile");
+    strcpy(destinatario, "Antonio");
+    r = es2a(r, nome, 30.0, destinatario);
+    strcpy(nome, "Pianta");
+    strcpy(destinatario, "Lucia");
+    r = es2a(r, nome, 10.0, destinatario);
+    strcpy(nome, "Cioccolatini");
+    strcpy(destinatario, "Lucia");
+    r = es2a(r, nome, 12.0, destinatario);
+    r = es2b(r, nome);
+    cout << "Es. 2: " << es2c(r, destinatario) << '\n';
+
+    // es. 3
+    char modello[dim] = "Peppina";
+    cout << "Es. 3: " << Ibrida(modello, 100.0, 1.0, 20.0).calcola_autonomia()
+         << '\n';
+}
