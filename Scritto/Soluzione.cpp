@@ -28,6 +28,12 @@ regalo* es2a(regalo*, char n[], float p, char d[]);
 regalo* es2b(regalo*, char []);
 float es2c(regalo*, char []);
 
+// es. 3
+class Automobile;
+class Benzina;
+class Ibrida;
+class Elettrica;
+
 int main()
 {
     // es. 1
@@ -113,3 +119,32 @@ float es2c(regalo* lista, char d[])
     // destinatari diversi
     return es2c(lista->next, d);
 }
+
+class Automobile {
+protected:
+    char modello[DIM];
+    float consumo_per_100km;
+public:
+    Automobile(char m[], float c)
+    {
+        strcpy(modello, m);
+        if (c > 0.0)
+            consumo_per_100km = c;
+        else
+            consumo_per_100km = 1.0; // valore predefinito
+    }
+
+    float calcola_consumi(float km)
+    {
+        if (km < 0.0)
+            km = 0.0; // valore predefinito
+        return consumo_per_100km / 100.0 * km;
+    }
+
+    float calcola_costo(float km, float euro)
+    {
+        if (euro < 0.0)
+            euro = 0.0; // valore predefinito
+        return calcola_consumi(km) * euro;
+    }
+};
