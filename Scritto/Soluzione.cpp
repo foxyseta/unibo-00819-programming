@@ -195,3 +195,21 @@ public:
         return 100.0 / (100.0 - risparmio) * Benzina::calcola_autonomia();
     }
 };
+
+class Elettrica: public Automobile {
+protected:
+    float batteria; // in kWh
+public:
+    Elettrica(char m[], float c, float b) // in kWh
+        :Automobile(m, c) {
+        if (b <= 0.0)
+            batteria = 1.0; // valore predefinito
+        else
+            batteria = b;
+    }
+
+    float calcola_autonomia()
+    {
+        return batteria / consumo_per_100km * 100.0;
+    }
+};
