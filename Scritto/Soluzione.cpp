@@ -166,3 +166,32 @@ public:
         return serbatoio / consumo_per_100km * 100.0;
     }
 };
+
+class Ibrida: public Benzina {
+protected:
+    float risparmio; // in percentuale
+public:
+    Ibrida(char m[], float c, float s, float r) // in litri e in percentuale
+        :Benzina(m, c, s) {
+        if (r <= 0.0 || r >= 100.0)
+            risparmio = 50.0; // valore predefinito
+        else
+            risparmio = r;
+    }
+
+    float calcola_consumi(float km)
+    {
+        return (100.0 - risparmio) / 100.0 * Automobile::calcola_consumi(km);
+    }
+
+    float calcola_costo(float km, float euro)
+    {
+        return (100.0 - risparmio) / 100.0 * Automobile::calcola_costo(km, euro);
+    }
+
+    float calcola_autonomia()
+    {
+        // confronta con versione cartacea
+        return 100.0 / (100.0 - risparmio) * Benzina::calcola_autonomia();
+    }
+};
