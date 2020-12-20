@@ -148,3 +148,21 @@ public:
         return calcola_consumi(km) * euro;
     }
 };
+
+class Benzina: public Automobile {
+protected:
+    float serbatoio; // in litri
+public:
+    Benzina(char m[], float c, float s) // in litri
+        :Automobile(m, c) {
+        if (s <= 0.0)
+            serbatoio = 1.0; // valore predefinito
+        else
+            serbatoio = s;
+    }
+
+    float calcola_autonomia()
+    {
+        return serbatoio / consumo_per_100km * 100.0;
+    }
+};
