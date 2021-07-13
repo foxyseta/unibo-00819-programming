@@ -1,2 +1,2 @@
-# Unibo_00819_Programmazione
-Esercizi e progetti per il mio corso di programmazione all'Università di Bologna
+# unibo-00819-programmazione
+Exercises and projects for the Unversity of Bologna Computer Architecture course (a.y. 2020-21).
